@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %}Calculator{% endblock %}
+{% block content %}
+  <h1>Simple Calculator</h1>
+  <form method="get">
+    <input type="number" step="any" name="a" value="{{ a|default:'' }}" required>
+    <select name="op">
+      <option value="add" {% if op == "add" %}selected{% endif %}>+</option>
+      <option value="sub" {% if op == "sub" %}selected{% endif %}>−</option>
+      <option value="mul" {% if op == "mul" %}selected{% endif %}>×</option>
+      <option value="div" {% if op == "div" %}selected{% endif %}>÷</option>
+    </select>
+    <input type="number" step="any" name="b" value="{{ b|default:'' }}" required>
+    <button type="submit">Calculate</button>
+  </form>
+
+  {% if result is not None %}<p><b>Result:</b> {{ result }}</p>{% endif %}
+  {% if error %}<p style="color:red">{{ error }}</p>{% endif %}
+{% endblock %}
