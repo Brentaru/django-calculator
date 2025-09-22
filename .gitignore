@@ -19,7 +19,32 @@ media/
 
 # Static files
 staticfiles/
+static_root/
 
+# Environment variables
+.env
+*.env
+
+# IDE settings
+.vscode/
+.idea/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Coverage/testing
+htmlcov/
+.tox/
+.coverage
+coverage.xml
+*.cover
+*.py,cover
+.cache
+nosetests.xml
+test.db
+
+# Build/packaging
 *.egg
 *.egg-info/
 dist/
@@ -46,7 +71,6 @@ dmypy.json
 .pytype/
 
 # Jupyter Notebook
-
 .ipynb_checkpoints
 
 # Local settings
